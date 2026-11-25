@@ -129,6 +129,36 @@ footer .flinks a{color:var(--gold-2);border-bottom:1px solid transparent;transit
 footer .flinks a:hover{border-color:var(--gold)}
 footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232,.45);letter-spacing:.08em}
 
+
+/* ---------- product detail view ---------- */
+.pv{position:fixed;inset:0;z-index:80;background:var(--cream);overflow-y:auto;display:none}
+.pv.open{display:block}
+.pv-top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(42,5,8,.92);backdrop-filter:blur(8px)}
+.pv-back{background:transparent;border:1px solid var(--gold-soft);color:var(--cream);font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.05em;padding:8px 16px;border-radius:999px;cursor:pointer}
+.pv-back:hover{border-color:var(--gold)}
+.pv-top span{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.14em;color:var(--cream)}
+.pv-top span b{color:var(--gold-2);font-weight:600}
+.pv-body{max-width:1020px;margin:0 auto;padding:26px 18px 60px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.pv-ph{position:relative;border-radius:20px;overflow:hidden;border:1px solid #eadfc6;box-shadow:0 16px 40px rgba(67,9,14,.12);aspect-ratio:4/5;background:#efe6d2}
+.pv-ph img{width:100%;height:100%;object-fit:cover}
+.pv-info h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,42px);font-weight:600;color:var(--maroon);text-align:left;line-height:1.08}
+.pv-cat{display:inline-block;margin:12px 0 4px;font-size:11.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#a07c2c;border:1px solid #d9c69a;padding:6px 12px;border-radius:999px}
+.pv-desc{margin-top:12px;font-size:16px;font-weight:300;color:#55483e;line-height:1.6}
+.pv-info h4{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--maroon);margin:24px 0 10px}
+.pv-info ul{list-style:none}
+.pv-info ul li{position:relative;padding:7px 0 7px 24px;font-size:14.5px;font-weight:300;color:#55483e;border-bottom:1px dashed #e8dcc2;line-height:1.5}
+.pv-info ul li::before{content:"✦";position:absolute;left:2px;color:#a07c2c;font-size:12px;top:10px}
+.pv-price{margin-top:22px;font-size:17px;font-weight:600;color:#8a6420}
+.pv-price.ask{font-weight:500;color:#a07c2c;font-size:15px;letter-spacing:.04em}
+.pv-order{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--maroon);color:var(--cream);padding:15px;border-radius:14px;font-size:16px;font-weight:500;letter-spacing:.05em}
+.pv-order:hover{background:var(--maroon-2)}
+.pv-order svg{width:19px;height:19px;fill:var(--gold-2)}
+.pv-note{margin-top:12px;font-size:13px;color:var(--muted);font-weight:300;text-align:center}
+.card .ph,.card h3{cursor:pointer}
+.card .view-link{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.06em;color:#a07c2c;cursor:pointer}
+.card .view-link:hover{color:var(--maroon)}
+@media(max-width:760px){.pv-body{grid-template-columns:1fr;gap:20px;padding-top:18px}}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -164,7 +194,7 @@ footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232
   <div class="frame"><img src="images/logo.png" alt="AJ Luxe — Handcrafted Luxury Accessories"></div>
   <div class="est">Handcrafted · Bridal · Festive</div>
   <h1>AJ <em>Luxe</em></h1>
-  <p class="tag">Clutches &amp; potlis that finish the look — mirror work, pearl work and hand embroidery, made piece by piece.</p>
+  <p class="tag">Handcrafted bridal clutches &amp; potlis — made piece by piece.</p>
   <div class="orn"><i>✦</i></div>
   <div class="cta-row">
     <a class="btn btn-gold" href="#collection">Shop the Collection</a>
@@ -173,6 +203,17 @@ footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232
 </div>
 
 <div class="marquee" aria-hidden="true"><div class="track" id="marqueeTrack"></div></div>
+
+
+<section id="collection" style="padding-top:20px">
+  <div class="wrap">
+    <div class="kicker rv">The Collection</div>
+    <h2 class="rv">Pieces Your Outfit Will Thank You For</h2>
+    <p class="lede rv">Every piece is photographed exactly as it is — what you see is what you receive. Tap any piece to see it up close.</p>
+    <div class="filters rv" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
 
 <section class="craft">
   <div class="wrap">
@@ -184,16 +225,6 @@ footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232
       <div class="craft-card rv"><div class="ic">❋</div><h3>Pearl Work</h3><p>Rows of lustrous pearls, stitched one by one for a finish that feels pure luxury.</p></div>
       <div class="craft-card rv"><div class="ic">✿</div><h3>Hand Embroidery</h3><p>Floral motifs and lattice patterns embroidered by skilled hands — no two pieces exactly alike.</p></div>
     </div>
-  </div>
-</section>
-
-<section id="collection" style="padding-top:20px">
-  <div class="wrap">
-    <div class="kicker rv">The Collection</div>
-    <h2 class="rv">Pieces Your Outfit Will Thank You For</h2>
-    <p class="lede rv">Every piece is photographed exactly as it is — what you see is what you receive. Tap any piece to order on WhatsApp.</p>
-    <div class="filters rv" id="filters"></div>
-    <div class="grid" id="grid"></div>
   </div>
 </section>
 
@@ -220,6 +251,27 @@ footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232
   <small>© 2026 AJ Luxe · Handcrafted in India · Prices &amp; orders on WhatsApp</small>
 </footer>
 
+
+<div class="pv" id="pv" role="dialog" aria-modal="true">
+  <div class="pv-top">
+    <button class="pv-back" id="pvBack">← Back to Collection</button>
+    <span>AJ <b>LUXE</b></span>
+  </div>
+  <div class="pv-body">
+    <div class="pv-ph"><img id="pvImg" src="" alt=""></div>
+    <div class="pv-info">
+      <h2 id="pvName"></h2>
+      <span class="pv-cat" id="pvCat"></span>
+      <p class="pv-desc" id="pvDesc"></p>
+      <h4>Details</h4>
+      <ul id="pvDetails"></ul>
+      <div id="pvPrice"></div>
+      <a class="pv-order" id="pvOrder" target="_blank" rel="noopener" href="#"></a>
+      <p class="pv-note">Price &amp; delivery are confirmed personally on WhatsApp.</p>
+    </div>
+  </div>
+</div>
+
 <a class="float-wa" href="https://wa.me/918369461675?text=Hello%20AJ%20Luxe!%20I%20want%20to%20know%20more%20about%20your%20collection." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.1z"/></svg></a>
 
 <script>
@@ -241,6 +293,26 @@ var PRODUCTS = [
   {img:"product-14-aqua-mirror-flap.jpg", name:"Aqua Mirror-Work Bag", desc:"Fresh aqua mirror work — a colour that stands out in every crowd.", cat:"mirror", badge:"New", price:null},
   {img:"product-15-lavender-mirror-flap.jpg", name:"Lavender Mirror-Pearl Bag", desc:"Lavender mirror lattice finished with fine pearl edging.", cat:"mirror", badge:"", price:null}
 ];
+
+var CAT_LABEL = {potli:"Potli", clutch:"Clutch Bag", mirror:"Mirror Work"};
+var DETAILS = [
+  ["Gold sequin handwork in a lotus-petal design","Drawstring closure with a beaded handle","Made for lehengas, sarees and festive suits","Handcrafted piece — photographed exactly as it is"],
+  ["Sculpted triangle silhouette","All-over crystal embellishment","Structured body with a crystal top handle","Handcrafted piece — photographed exactly as it is"],
+  ["Rose-pink sequins over a soft satin base","Lotus-petal panel design","Drawstring closure with an embellished handle","Handcrafted piece — photographed exactly as it is"],
+  ["Silver crystal work in a lotus design","Soft satin drawstring top","Embellished handle for an easy carry","Handcrafted piece — photographed exactly as it is"],
+  ["Black-on-black sequin lotus work","Drawstring closure with a beaded handle","The perfect finish for black outfits","Handcrafted piece — photographed exactly as it is"],
+  ["Deep maroon velvet, half-moon shape","Pearl lattice with floral motifs","Mint bead tassels along the edge","Handcrafted piece — photographed exactly as it is"],
+  ["Hand-laid shell work in black and gold","Structured triangle silhouette","Beaded fringe detailing","Handcrafted piece — photographed exactly as it is"],
+  ["Pastel floral embroidery on a white base","Pearl-drop tassels","Drawstring cords with bead finishing","Handcrafted piece — photographed exactly as it is"],
+  ["Pastel pearl-circle flap design","Flowing pearl fringe","Embellished top handle","Handcrafted piece — photographed exactly as it is"],
+  ["Blush-pink pearl-circle flap design","Flowing pearl fringe","Embellished top handle","Handcrafted piece — photographed exactly as it is"],
+  ["Rich maroon velvet body","Ivory floral hand embroidery","Pearl fringe with an embroidered handle","Handcrafted piece — photographed exactly as it is"],
+  ["Mirror and pearl work on an ivory base","Floral embroidered flap","Fine tassel detailing","Handcrafted piece — photographed exactly as it is"],
+  ["Black mirror work with pearl lattice","Floral centre motif","Structured flap silhouette","Handcrafted piece — photographed exactly as it is"],
+  ["Aqua mirror work with floral detail","Pearl edging and fringe","Structured flap silhouette","Handcrafted piece — photographed exactly as it is"],
+  ["Lavender mirror lattice design","Fine pearl edging","Structured flap silhouette","Handcrafted piece — photographed exactly as it is"]
+];
+
 var FILTERS = [
   {key:"all", label:"All Pieces"},
   {key:"potli", label:"Potlis"},
@@ -255,7 +327,7 @@ function waLink(p){
 function renderGrid(cat){
   var grid = document.getElementById("grid");
   grid.innerHTML = "";
-  PRODUCTS.forEach(function(p){
+  PRODUCTS.forEach(function(p, idx){
     if(cat !== "all" && p.cat !== cat) return;
     var card = document.createElement("article");
     card.className = "card rv in";
@@ -267,7 +339,11 @@ function renderGrid(cat){
       (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') + '</div>' +
       '<div class="body"><h3>' + p.name + '</h3><p class="desc">' + p.desc + '</p>' +
       priceHtml +
-      '<a class="order-btn" target="_blank" rel="noopener" href="' + waLink(p) + '">' + waSVG + 'Order on WhatsApp</a></div>';
+      '<a class="order-btn" target="_blank" rel="noopener" href="' + waLink(p) + '">' + waSVG + 'Order on WhatsApp</a>' +
+      '<span class="view-link">View Details →</span></div>';
+    card.querySelector(".ph").addEventListener("click", function(){ openProduct(idx); });
+    card.querySelector("h3").addEventListener("click", function(){ openProduct(idx); });
+    card.querySelector(".view-link").addEventListener("click", function(){ openProduct(idx); });
     grid.appendChild(card);
   });
 }
@@ -285,6 +361,47 @@ function renderFilters(){
     box.appendChild(b);
   });
 }
+
+function openProduct(i){
+  var p = PRODUCTS[i];
+  document.getElementById("pvImg").src = "images/" + p.img;
+  document.getElementById("pvImg").alt = p.name + " — AJ Luxe";
+  document.getElementById("pvName").textContent = p.name;
+  document.getElementById("pvCat").textContent = (CAT_LABEL[p.cat] || "Handcrafted") + (p.badge ? " · " + p.badge : "");
+  document.getElementById("pvDesc").textContent = p.desc;
+  var ul = document.getElementById("pvDetails");
+  ul.innerHTML = "";
+  (DETAILS[i] || []).forEach(function(d){
+    var li = document.createElement("li");
+    li.textContent = d;
+    ul.appendChild(li);
+  });
+  document.getElementById("pvPrice").innerHTML = p.price
+    ? '<div class="pv-price">₹' + p.price + '</div>'
+    : '<div class="pv-price ask">Price on WhatsApp</div>';
+  var ob = document.getElementById("pvOrder");
+  ob.href = waLink(p);
+  ob.innerHTML = waSVG + "Order on WhatsApp";
+  document.getElementById("pv").classList.add("open");
+  document.getElementById("pv").scrollTop = 0;
+  document.body.style.overflow = "hidden";
+  if(location.hash !== "#product-" + (i + 1)) history.pushState(null, "", "#product-" + (i + 1));
+}
+function closeProduct(){
+  document.getElementById("pv").classList.remove("open");
+  document.body.style.overflow = "";
+  if(location.hash.indexOf("#product-") === 0) history.pushState(null, "", location.pathname + location.search);
+}
+document.getElementById("pvBack").addEventListener("click", closeProduct);
+window.addEventListener("popstate", function(){
+  var m = location.hash.match(/^#product-(\d+)$/);
+  if(m) openProduct(parseInt(m[1], 10) - 1); else closeProduct();
+});
+(function(){
+  var m = location.hash.match(/^#product-(\d+)$/);
+  if(m){ var i = parseInt(m[1], 10) - 1; if(PRODUCTS[i]) openProduct(i); }
+})();
+
 renderFilters();
 renderGrid("all");
 
