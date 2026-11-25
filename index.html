@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ Luxe — Handcrafted Bridal Clutches & Potlis</title>
+<meta name="description" content="AJ Luxe — handcrafted bridal & party clutches and potlis. Mirror work, pearl work and hand embroidery. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#43090e;
+  --maroon-2:#5a1116;
+  --maroon-3:#2a0508;
+  --gold:#c9a24b;
+  --gold-2:#e6c878;
+  --gold-soft:rgba(201,162,75,.35);
+  --cream:#faf4e8;
+  --cream-2:#f3e9d5;
+  --ink:#2b2320;
+  --muted:#7a6a5c;
+  --card:#fffdf8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(42,5,8,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--gold-soft)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);object-fit:cover}
+.brand span{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.14em;color:var(--cream)}
+.brand span b{color:var(--gold-2);font-weight:600}
+.wa-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#b98a2f,var(--gold) 45%,var(--gold-2));color:#2a1503;font-weight:600;font-size:13.5px;letter-spacing:.04em;padding:9px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease}
+.wa-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.wa-btn svg{width:16px;height:16px;fill:#2a1503}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:radial-gradient(120% 90% at 50% 0%,var(--maroon-2) 0%,var(--maroon) 52%,var(--maroon-3) 100%);color:var(--cream);text-align:center;padding:118px 22px 74px;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border:1px solid var(--gold-soft);border-radius:50%;pointer-events:none}
+.hero::before{width:560px;height:560px;left:50%;top:-215px;transform:translateX(-50%)}
+.hero::after{width:820px;height:820px;left:50%;top:-335px;transform:translateX(-50%);opacity:.55}
+.hero .frame{position:relative;width:172px;height:172px;margin:0 auto 22px;border-radius:50%;padding:5px;background:conic-gradient(from 120deg,#8a6420,var(--gold-2),#8a6420,var(--gold),#8a6420);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.hero .frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--maroon-3)}
+.hero .est{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,9vw,74px);font-weight:600;line-height:1.02;letter-spacing:.06em}
+.hero h1 em{font-style:italic;font-weight:500;background:linear-gradient(100deg,var(--gold) 10%,#f4e2a1 50%,var(--gold) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tag{margin:16px auto 6px;max-width:520px;font-size:16.5px;font-weight:300;letter-spacing:.05em;color:#efe3cb}
+.hero .sub{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,244,232,.62)}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px auto 26px;color:var(--gold)}
+.orn::before,.orn::after{content:"";height:1px;width:74px;background:linear-gradient(90deg,transparent,var(--gold));display:block}
+.orn::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.orn i{font-style:normal;font-size:13px}
+.hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-size:14.5px;font-weight:500;letter-spacing:.06em;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#b98a2f,var(--gold) 45%,var(--gold-2));color:#2a1503;box-shadow:0 10px 26px rgba(0,0,0,.38)}
+.btn-ghost{border:1px solid var(--gold-soft);color:var(--cream);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(255,255,255,.07)}
+.btn svg{width:17px;height:17px;fill:currentColor}
+
+/* ---------- marquee ---------- */
+.marquee{background:linear-gradient(90deg,#8a6420,var(--gold) 30%,var(--gold-2) 50%,var(--gold) 70%,#8a6420);color:#331b04;overflow:hidden;white-space:nowrap;padding:10px 0}
+.marquee .track{display:inline-block;animation:scroll 30s linear infinite;font-size:13px;font-weight:600;letter-spacing:.34em;text-transform:uppercase}
+.marquee span{margin:0 26px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:70px 20px}
+.wrap{max-width:1160px;margin:0 auto}
+.kicker{text-align:center;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:#a07c2c;margin-bottom:10px}
+h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:clamp(32px,6vw,46px);font-weight:600;color:var(--maroon);line-height:1.1}
+.lede{text-align:center;color:var(--muted);max-width:560px;margin:12px auto 0;font-size:15.5px;font-weight:300;letter-spacing:.02em}
+.orn.dark{color:#a07c2c;margin:18px auto 0}
+.orn.dark::before{background:linear-gradient(90deg,transparent,#a07c2c)}
+.orn.dark::after{background:linear-gradient(90deg,#a07c2c,transparent)}
+
+/* ---------- craft ---------- */
+.craft{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%)}
+.craft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+.craft-card{background:var(--card);border:1px solid #e8dcc2;border-radius:18px;padding:30px 24px;text-align:center;box-shadow:0 6px 22px rgba(67,9,14,.05);transition:transform .3s ease,box-shadow .3s ease}
+.craft-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(67,9,14,.1)}
+.craft-card .ic{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:24px;color:#a07c2c;background:radial-gradient(circle at 35% 30%,#fff8e6,#f3e5c3)}
+.craft-card h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--maroon);margin-bottom:7px}
+.craft-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.55}
+
+/* ---------- collection ---------- */
+.filters{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:36px 0 30px}
+.chip{border:1px solid #d9c69a;background:transparent;color:#6d5620;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:.08em;padding:9px 20px;border-radius:999px;cursor:pointer;transition:all .25s ease}
+.chip:hover{border-color:var(--gold)}
+.chip.active{background:var(--maroon);border-color:var(--maroon);color:var(--gold-2)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid #eadfc6;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(67,9,14,.06);transition:transform .35s ease,box-shadow .35s ease;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(67,9,14,.13)}
+.card .ph{position:relative;overflow:hidden;aspect-ratio:4/5;background:#efe6d2}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.06)}
+.card .badge{position:absolute;top:12px;left:12px;background:rgba(42,5,8,.85);color:var(--gold-2);font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:6px 11px;border-radius:999px;border:1px solid var(--gold-soft);backdrop-filter:blur(4px)}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:5px;flex:1}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:22.5px;font-weight:600;color:var(--maroon);line-height:1.15}
+.card .desc{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.5;flex:1}
+.card .price{font-size:15px;font-weight:600;color:#8a6420;letter-spacing:.03em;margin-top:6px}
+.card .price.ask{font-weight:500;color:#a07c2c;font-size:13.5px;letter-spacing:.05em}
+.order-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--maroon);color:var(--cream);padding:12px;border-radius:12px;font-size:14px;font-weight:500;letter-spacing:.05em;transition:background .25s ease}
+.order-btn:hover{background:var(--maroon-2)}
+.order-btn svg{width:16px;height:16px;fill:var(--gold-2)}
+
+/* ---------- steps ---------- */
+.steps{background:var(--maroon);color:var(--cream);position:relative;overflow:hidden}
+.steps::before{content:"";position:absolute;inset:14px;border:1px solid var(--gold-soft);border-radius:22px;pointer-events:none}
+.steps h2{color:var(--cream)}
+.steps .kicker{color:var(--gold-2)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;position:relative}
+.step{text-align:center;padding:8px 14px}
+.step .num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:transparent;-webkit-text-stroke:1px var(--gold);line-height:1}
+.step h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin:10px 0 6px;color:var(--gold-2)}
+.step p{font-size:14px;font-weight:300;color:rgba(250,244,232,.78);line-height:1.55;max-width:280px;margin:0 auto}
+
+/* ---------- footer ---------- */
+footer{background:var(--maroon-3);color:rgba(250,244,232,.75);text-align:center;padding:54px 20px 40px}
+footer img{width:76px;height:76px;border-radius:50%;border:1.5px solid var(--gold);object-fit:cover;margin:0 auto 14px}
+footer .fname{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:.14em;color:var(--cream)}
+footer .fname b{color:var(--gold-2);font-weight:600}
+footer .flinks{margin:16px 0 6px;display:flex;gap:22px;justify-content:center;font-size:14px;letter-spacing:.06em}
+footer .flinks a{color:var(--gold-2);border-bottom:1px solid transparent;transition:border-color .25s}
+footer .flinks a:hover{border-color:var(--gold)}
+footer small{display:block;margin-top:14px;font-size:12px;color:rgba(250,244,232,.45);letter-spacing:.08em}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- float ---------- */
+.float-wa{position:fixed;right:16px;bottom:16px;z-index:60;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .25s ease}
+.float-wa:hover{transform:scale(1.07)}
+.float-wa svg{width:28px;height:28px;fill:#fff}
+
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.craft-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:640px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:13px}
+  .craft-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr;gap:28px}
+  section{padding:54px 14px}
+  .card .body{padding:13px 13px 15px}
+  .card h3{font-size:19px}
+  .card .desc{font-size:12.5px}
+  .order-btn{font-size:13px;padding:10px}
+  .hero{padding-top:104px}
+  .brand span{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#top"><img src="images/logo.png" alt="AJ Luxe logo"><span>AJ <b>LUXE</b></span></a>
+  <a class="wa-btn" href="https://wa.me/918369461675?text=Hello%20AJ%20Luxe!%20I%20want%20to%20know%20more%20about%20your%20collection." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.1z"/></svg>WhatsApp Us</a>
+</header>
+
+<div class="hero" id="top">
+  <div class="frame"><img src="images/logo.png" alt="AJ Luxe — Handcrafted Luxury Accessories"></div>
+  <div class="est">Handcrafted · Bridal · Festive</div>
+  <h1>AJ <em>Luxe</em></h1>
+  <p class="tag">Clutches &amp; potlis that finish the look — mirror work, pearl work and hand embroidery, made piece by piece.</p>
+  <div class="orn"><i>✦</i></div>
+  <div class="cta-row">
+    <a class="btn btn-gold" href="#collection">Shop the Collection</a>
+    <a class="btn btn-ghost" href="https://www.instagram.com/ajluxe.in" target="_blank" rel="noopener">Follow @ajluxe.in</a>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="marqueeTrack"></div></div>
+
+<section class="craft">
+  <div class="wrap">
+    <div class="kicker rv">The Craft</div>
+    <h2 class="rv">Made by Hand, Worn with Pride</h2>
+    <div class="orn dark rv"><i>✦</i></div>
+    <div class="craft-grid">
+      <div class="craft-card rv"><div class="ic">✦</div><h3>Mirror Work</h3><p>Hand-set mirrors that catch the light with every move — the sparkle your outfit deserves.</p></div>
+      <div class="craft-card rv"><div class="ic">❋</div><h3>Pearl Work</h3><p>Rows of lustrous pearls, stitched one by one for a finish that feels pure luxury.</p></div>
+      <div class="craft-card rv"><div class="ic">✿</div><h3>Hand Embroidery</h3><p>Floral motifs and lattice patterns embroidered by skilled hands — no two pieces exactly alike.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="collection" style="padding-top:20px">
+  <div class="wrap">
+    <div class="kicker rv">The Collection</div>
+    <h2 class="rv">Pieces Your Outfit Will Thank You For</h2>
+    <p class="lede rv">Every piece is photographed exactly as it is — what you see is what you receive. Tap any piece to order on WhatsApp.</p>
+    <div class="filters rv" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="kicker rv">Ordering</div>
+    <h2 class="rv">Yours in Three Simple Steps</h2>
+    <div class="steps-grid">
+      <div class="step rv"><div class="num">01</div><h3>Pick Your Piece</h3><p>Choose the clutch or potli you love from the collection above.</p></div>
+      <div class="step rv"><div class="num">02</div><h3>Message on WhatsApp</h3><p>Tap the order button — we confirm the price, availability and delivery details with you personally.</p></div>
+      <div class="step rv"><div class="num">03</div><h3>Delivered to You</h3><p>Pay easily on UPI or choose Cash on Delivery. Your piece is packed with care and shipped to your door.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="images/logo.png" alt="AJ Luxe logo">
+  <div class="fname">AJ <b>LUXE</b></div>
+  <div class="flinks">
+    <a href="https://www.instagram.com/ajluxe.in" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/918369461675?text=Hello%20AJ%20Luxe!%20I%20want%20to%20know%20more%20about%20your%20collection." target="_blank" rel="noopener">WhatsApp</a>
+    <a href="#collection">Collection</a>
+  </div>
+  <small>© 2026 AJ Luxe · Handcrafted in India · Prices &amp; orders on WhatsApp</small>
+</footer>
+
+<a class="float-wa" href="https://wa.me/918369461675?text=Hello%20AJ%20Luxe!%20I%20want%20to%20know%20more%20about%20your%20collection." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.1z"/></svg></a>
+
+<script>
+var WA = "918369461675";
+var PRODUCTS = [
+  {img:"product-01-ivory-lotus-potli.jpg", name:"Ivory Lotus Potli", desc:"Gold sequin lotus potli with a beaded handle — pure bridal glow.", cat:"potli", badge:"Bestseller", price:null},
+  {img:"product-02-silver-triangle.jpg", name:"Silver Triangle Crystal Bag", desc:"A sculpted triangle silhouette, fully dressed in crystals.", cat:"clutch", badge:"New", price:null},
+  {img:"product-03-rose-lotus-potli.jpg", name:"Rose Blush Lotus Potli", desc:"Rose-pink sequins on a soft satin lotus — romantic and radiant.", cat:"potli", badge:"", price:null},
+  {img:"product-04-silver-lotus-potli.jpg", name:"Silver Crystal Lotus Potli", desc:"Silver crystal lotus potli that turns every entrance into a moment.", cat:"potli", badge:"", price:null},
+  {img:"product-05-black-lotus-potli.jpg", name:"Black Onyx Lotus Potli", desc:"Black-on-black sequin lotus — the one every black outfit needs.", cat:"potli", badge:"", price:null},
+  {img:"product-06-maroon-halfmoon.jpg", name:"Maroon Pearl Half-Moon Bag", desc:"Deep maroon velvet, pearl lattice and mint bead tassels.", cat:"clutch", badge:"Bridal Pick", price:null},
+  {img:"product-07-black-shell-triangle.jpg", name:"Black & Gold Shell Triangle Bag", desc:"Hand-laid shells in black and gold — bold, rare, unforgettable.", cat:"clutch", badge:"", price:null},
+  {img:"product-08-white-floral-potli.jpg", name:"White Pastel Floral Potli", desc:"A dainty white potli with pastel floral work and pearl drops.", cat:"potli", badge:"", price:null},
+  {img:"product-09-white-pearl-flap.jpg", name:"Ivory Pearl Fringe Bag", desc:"Pastel pearl circles with a flowing pearl fringe.", cat:"clutch", badge:"", price:null},
+  {img:"product-10-blush-pearl-flap.jpg", name:"Blush Pearl Fringe Bag", desc:"The blush twin of our pearl fringe favourite — soft and festive.", cat:"clutch", badge:"", price:null},
+  {img:"product-11-maroon-velvet-flap.jpg", name:"Maroon Velvet Floral Bag", desc:"Rich maroon velvet with ivory floral embroidery and pearl fringe.", cat:"clutch", badge:"Bridal Pick", price:null},
+  {img:"product-12-ivory-pearl-flap.jpg", name:"Ivory Pearl Mirror Bag", desc:"Ivory mirror-and-pearl work with a delicate floral flap.", cat:"mirror", badge:"", price:null},
+  {img:"product-13-black-mirror-flap.jpg", name:"Black Mirror-Work Bag", desc:"Black mirror work with pearl lattice and floral detail.", cat:"mirror", badge:"", price:null},
+  {img:"product-14-aqua-mirror-flap.jpg", name:"Aqua Mirror-Work Bag", desc:"Fresh aqua mirror work — a colour that stands out in every crowd.", cat:"mirror", badge:"New", price:null},
+  {img:"product-15-lavender-mirror-flap.jpg", name:"Lavender Mirror-Pearl Bag", desc:"Lavender mirror lattice finished with fine pearl edging.", cat:"mirror", badge:"", price:null}
+];
+var FILTERS = [
+  {key:"all", label:"All Pieces"},
+  {key:"potli", label:"Potlis"},
+  {key:"clutch", label:"Clutches"},
+  {key:"mirror", label:"Mirror Work"}
+];
+var waSVG = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.1z"/></svg>';
+function waLink(p){
+  var msg = "Hello AJ Luxe! I'm interested in the *" + p.name + "*. Please share the price and details.";
+  return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+}
+function renderGrid(cat){
+  var grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  PRODUCTS.forEach(function(p){
+    if(cat !== "all" && p.cat !== cat) return;
+    var card = document.createElement("article");
+    card.className = "card rv in";
+    var priceHtml = (p.price)
+      ? '<div class="price">₹' + p.price + '</div>'
+      : '<div class="price ask">Price on WhatsApp</div>';
+    card.innerHTML =
+      '<div class="ph"><img loading="lazy" src="images/' + p.img + '" alt="' + p.name + ' — AJ Luxe">' +
+      (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') + '</div>' +
+      '<div class="body"><h3>' + p.name + '</h3><p class="desc">' + p.desc + '</p>' +
+      priceHtml +
+      '<a class="order-btn" target="_blank" rel="noopener" href="' + waLink(p) + '">' + waSVG + 'Order on WhatsApp</a></div>';
+    grid.appendChild(card);
+  });
+}
+function renderFilters(){
+  var box = document.getElementById("filters");
+  FILTERS.forEach(function(f, i){
+    var b = document.createElement("button");
+    b.className = "chip" + (i === 0 ? " active" : "");
+    b.textContent = f.label;
+    b.onclick = function(){
+      box.querySelectorAll(".chip").forEach(function(c){ c.classList.remove("active"); });
+      b.classList.add("active");
+      renderGrid(f.key);
+    };
+    box.appendChild(b);
+  });
+}
+renderFilters();
+renderGrid("all");
+
+var items = ["Mirror Work","Pearl Work","Hand Embroidery","Bridal Clutches","Festive Potlis","Pan-India Delivery"];
+var half = items.map(function(t){ return "<span>" + t + " ✦</span>"; }).join("");
+document.getElementById("marqueeTrack").innerHTML = half + half;
+
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
